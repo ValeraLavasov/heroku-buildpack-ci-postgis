@@ -1,8 +1,8 @@
 # Heroku CI buildpack: Postgis
 
-- Postgis 2.5.2 for postgresql 11.5.*
-- Proj 4.9.2
-- Geos 3.7.2
+- Postgis 3.0.1 for postgresql 12.2
+- Proj 6.3.1
+- Geos 3.8.0
 - without raster support!
 
 ## How does it work?
@@ -22,11 +22,11 @@ Just add it to `app.json` definition, like:
  "environments": {
     "test": {
       "buildpacks": [
-        { "url":  "https://github.com/riskmethods/heroku-buildpack-ci-postgis" },
+        { "url":  "https://github.com/ValeraLavasov/heroku-buildpack-ci-postgis" },
         { "url": "heroku/nodejs"},
         { "url": "heroku/ruby" }
       ],
-      "env": {  "POSTGRESQL_VERSION": "11.5" },
+      "env": {  "POSTGRESQL_VERSION": "12.2" },
       "addons": ["heroku-postgresql:in-dyno"]
     }
   }

@@ -1,15 +1,15 @@
 FROM heroku/heroku:18
-ENV POSTGRESQL_VERSION=11.5
+ENV POSTGRESQL_VERSION=12.2
 
 RUN apt-get -q update
-RUN apt-get -q -y install curl gcc g++ make wget unzip build-essential libreadline-dev zlib1g-dev flex bison libkrb5-dev libssl-dev libxml2-dev libxslt1-dev uuid-dev
+RUN apt-get -q -y install curl gcc g++ make wget unzip build-essential libreadline-dev zlib1g-dev flex bison libkrb5-dev libssl-dev libxml2-dev libxslt1-dev uuid-dev zlib1g-dev libsqlite3-dev pkg-config sqlite3 libcurl4-gnutls-dev libtiff5-dev libcunit1 libjson-c-dev
 
 RUN wget https://ci-database-binary.s3.amazonaws.com/heroku-18/postgresql-${POSTGRESQL_VERSION}.tgz
 RUN mkdir postgresql && tar -C postgresql -xzf postgresql-${POSTGRESQL_VERSION}.tgz
 
-ENV POSTGIS_VERSION=2.5.2
-ENV GEOS_VERSION=3.7.2
-ENV PROJ_VERSION=4.9.2
+ENV POSTGIS_VERSION=3.0.1
+ENV GEOS_VERSION=3.8.0
+ENV PROJ_VERSION=6.3.1
 
 RUN wget https://postgis.net/stuff/postgis-${POSTGIS_VERSION}.tar.gz
 RUN wget https://download.osgeo.org/proj/proj-${PROJ_VERSION}.tar.gz

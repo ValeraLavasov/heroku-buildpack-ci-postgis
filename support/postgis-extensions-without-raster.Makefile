@@ -1,8 +1,8 @@
 include ../upgradeable_versions.mk
 
 EXTENSION     = postgis
-EXTVERSION    = 2.5.2
-MINORVERSION  = 2.5
+EXTVERSION    = 3.0.1
+MINORVERSION  = 3.0
 MODULEPATH    = $$libdir/$(EXTENSION)-$(MINORVERSION)
 GREP = /bin/grep
 PERL = /usr/bin/perl
